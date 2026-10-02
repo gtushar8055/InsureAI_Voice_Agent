@@ -1,15 +1,23 @@
-# LiveKit and Gemini Realtime
+# LiveKit core (must match livekit-agents 1.8.3)
 livekit==1.1.18
+livekit-agents
 livekit-agents[google,turn-detector]==1.8.3
 
-# Local RAG
-chromadb==1.5.9
-langchain-chroma==1.1.0
-langchain-community==0.4.2
-langchain-core==1.6.6
-sentence-transformers==6.1.0
+# Google Gemini support
+google-cloud-aiplatform
+google-generativeai
 
-# Runtime services
-python-dotenv==1.2.2
-fastapi==0.136.3
-uvicorn==0.49.0
+# Vectorstore & embeddings
+chromadb
+langchain>=0.1.0
+langchain_community
+langchain_google_genai
+langchain_chroma
+sentence_transformers
+
+# Environment & helpers
+python-dotenv
+
+# Optional for web/API interface
+fastapi
+uvicorn

@@ -158,6 +158,5 @@ if __name__ == "__main__":
         WorkerOptions(
             entrypoint_fnc=entrypoint,
             num_idle_processes=0,
-            port=int(os.getenv("PORT", "8081")),
         )
     )

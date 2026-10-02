@@ -7,11 +7,19 @@ from fastapi.middleware.cors import CORSMiddleware
 load_dotenv(os.path.join(os.path.dirname(__file__), ".env.local"))
 
 app = FastAPI()
+FRONTEND_URL = os.getenv("FRONTEND_URL")
+allowed_origins = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "http://localhost:3000",
+]
+if FRONTEND_URL:
+    allowed_origins.append(FRONTEND_URL.rstrip("/"))
 
 # Allow CORS for frontend dev server(s)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173", "http://localhost:3000"],
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

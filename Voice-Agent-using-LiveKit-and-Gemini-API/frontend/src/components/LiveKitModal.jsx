@@ -15,7 +15,7 @@ const LiveKitModal = ({ setShowSupport }) => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/token?user=${encodeURIComponent(userName)}`,
+        `${import.meta.env.VITE_API_URL || "http://127.0.0.1:8000"}/token?user=${encodeURIComponent(userName)}`,
       );
       const data = await response.json();
       setToken(data.token);

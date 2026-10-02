@@ -1,0 +1,75 @@
+# ================================================================
+#  InsureAI — Voice Agent  |  .gitignore
+#  ⚠ NEVER commit real API keys, tokens, or secrets
+# ================================================================
+
+# ─── Environment / Secrets ──────────────────────────────────────
+# Backend
+/backend/.env
+/backend/.env.local
+/backend/.env.*.local
+/backend/.env.development
+/backend/.env.production
+
+# Frontend (Vite)
+/frontend/.env
+/frontend/.env.local
+/frontend/.env.*.local
+/frontend/.env.development
+/frontend/.env.production
+
+# Allow example templates (no real values inside)
+!**/.env.example
+
+# ─── Python ─────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env_folder/
+ENV/
+env.bak/
+venv.bak/
+
+# Pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+
+# ─── ChromaDB / Vector Store ────────────────────────────────────
+/backend/kb_chroma_db/
+
+# ─── Node / Frontend ────────────────────────────────────────────
+node_modules/
+/frontend/dist/
+/frontend/dist-ssr/
+*.local
+
+# ─── OS Files ───────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── Editor / IDE ───────────────────────────────────────────────
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.swp
